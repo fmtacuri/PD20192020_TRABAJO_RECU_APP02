@@ -25,7 +25,7 @@ public class TodoServiceImpl implements TodoService {
 
 	@Override
 	public List<Todos> findAll() {
-		TypedQuery<Todos> query = em.createQuery("Select e from Todos e", Todos.class);
+		TypedQuery<Todos> query = em.createQuery("Select o from Todos o", Todos.class);
 		List<Todos> todos = query.getResultList();
 		return todos;
 
