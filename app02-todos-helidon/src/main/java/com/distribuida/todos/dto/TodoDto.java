@@ -1,4 +1,4 @@
-package com.distribuida.usuario.dto;
+package com.distribuida.todos.dto;
 
 import lombok.Getter;
 import lombok.Setter;

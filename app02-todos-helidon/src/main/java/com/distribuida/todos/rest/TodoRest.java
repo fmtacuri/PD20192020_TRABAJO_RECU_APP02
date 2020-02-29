@@ -1,4 +1,4 @@
-package com.distribuida.usuario.rest;
+package com.distribuida.todos.rest;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
-import com.distribuida.usuario.dto.TodoDto;
-import com.distribuida.usuario.service.TodoService;
+import com.distribuida.todos.dto.TodoDto;
+import com.distribuida.todos.service.TodoService;
 
 @Path("/todos")
 @Produces("application/json")

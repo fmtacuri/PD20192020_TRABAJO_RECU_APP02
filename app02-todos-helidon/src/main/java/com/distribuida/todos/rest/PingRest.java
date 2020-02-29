@@ -1,4 +1,4 @@
-package com.distribuida.usuario.rest;
+package com.distribuida.todos.rest;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.GET;

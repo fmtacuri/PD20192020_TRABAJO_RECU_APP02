@@ -1,4 +1,4 @@
-package com.distribuida.usuario.service;
+package com.distribuida.todos.service;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -10,9 +10,9 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
-import com.distribuida.usuario.db.Todos;
-import com.distribuida.usuario.dto.TodoDto;
-import com.distribuida.usuario.util.TodoUtil;
+import com.distribuida.todos.db.Todos;
+import com.distribuida.todos.dto.TodoDto;
+import com.distribuida.todos.util.TodoUtil;
 
 @ApplicationScoped
 @Transactional

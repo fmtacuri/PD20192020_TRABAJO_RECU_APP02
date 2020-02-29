@@ -1,8 +1,8 @@
-package com.distribuida.usuario.service;
+package com.distribuida.todos.service;
 
 import java.util.List;
 
-import com.distribuida.usuario.dto.TodoDto;
+import com.distribuida.todos.dto.TodoDto;
 
 public interface TodoService {
 	

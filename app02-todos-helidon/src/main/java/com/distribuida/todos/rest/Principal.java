@@ -1,4 +1,4 @@
-package com.distribuida.usuario.rest;
+package com.distribuida.todos.rest;
 
 public class Principal {
 

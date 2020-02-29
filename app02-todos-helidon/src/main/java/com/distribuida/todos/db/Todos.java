@@ -1,4 +1,4 @@
-package com.distribuida.usuario.db;
+package com.distribuida.todos.db;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

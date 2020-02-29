@@ -1,9 +1,9 @@
-package com.distribuida.usuario.util;
+package com.distribuida.todos.util;
 
 import javax.persistence.TypedQuery;
 
-import com.distribuida.usuario.db.Todos;
-import com.distribuida.usuario.dto.TodoDto;
+import com.distribuida.todos.db.Todos;
+import com.distribuida.todos.dto.TodoDto;
 
 public class TodoUtil {
 

@@ -1,7 +1,9 @@
-package com.distribuida.usuario.rest;
+package com.distribuida.todos.rest;
 
 import java.net.Inet4Address;
 import java.net.UnknownHostException;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
@@ -53,6 +55,9 @@ public class ServidorApp extends Application {
 		return "127.0.0.1";
 	}
 
+	
+	//Creamos una lista para la conexion con Fabio
+	List<String> tags = Arrays.asList("urlprefix-/users");
 	public void init(@Observes @Initialized(ApplicationScoped.class) Object init) {
 
 		ConsulClient client = new ConsulClient(consulHost, consulPort);
@@ -63,6 +68,9 @@ public class ServidorApp extends Application {
 		s.setId(ID);
 		s.setAddress(getIP());
 		s.setPort(puerto);
+		
+		//Se debe agregar un tag para que haya la conexion entre fabio y consul
+		s.setTags(tags);
 
 		NewService.Check check = new NewService.Check();
 
