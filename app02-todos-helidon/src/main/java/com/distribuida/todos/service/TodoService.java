@@ -2,13 +2,14 @@ package com.distribuida.todos.service;
 
 import java.util.List;
 
-import com.distribuida.todos.dto.TodoDto;
+import com.distribuida.todos.db.Todos;
+
 
 public interface TodoService {
 	
 	//Listo
-	public TodoDto findById(Integer id);
+	public Todos findById(Integer id);
 	
 	// Listo
-	public List<TodoDto> findAll( );
+	public List<Todos> findAll( );
 }

@@ -1,18 +1,14 @@
 package com.distribuida.todos.service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
 import com.distribuida.todos.db.Todos;
-import com.distribuida.todos.dto.TodoDto;
-import com.distribuida.todos.util.TodoUtil;
 
 @ApplicationScoped
 @Transactional
@@ -21,36 +17,18 @@ public class TodoServiceImpl implements TodoService {
 	@PersistenceContext
 	private EntityManager em;
 
-	@Inject
-	TodoUtil utilTodo;
-
 	@Override
-	public TodoDto findById(Integer id) {
-
-		TypedQuery<Todos> qry = em.createQuery("select o from Todos o where o.userId=:id", Todos.class);
-		qry.setParameter("id", id);
-
-		TodoDto dto = utilTodo.dto(qry);
-
-		return dto;
+	public Todos findById(Integer id) {
+		Todos todos = em.find(Todos.class, id);
+		return todos;
 	}
 
 	@Override
-	public List<TodoDto> findAll() {
-		TypedQuery<Todos> qry = em.createQuery("select o from Todos o order by o.id asc", Todos.class);
+	public List<Todos> findAll() {
+		TypedQuery<Todos> query = em.createQuery("Select e from Todos e", Todos.class);
+		List<Todos> todos = query.getResultList();
+		return todos;
 
-		List<TodoDto> ret = qry.getResultList().stream().map(s -> {
-			TodoDto dto = new TodoDto();
-
-			dto.setId(s.getId());
-			dto.setUserId(s.getUserId());
-			dto.setTitle(s.getTitle());
-			dto.setCompleted(s.getCompleted());
-
-			return dto;
-		}).collect(Collectors.toList());
-
-		return ret;
 	}
 
 }

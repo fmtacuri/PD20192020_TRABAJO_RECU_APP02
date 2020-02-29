@@ -57,7 +57,7 @@ public class ServidorApp extends Application {
 
 	
 	//Creamos una lista para la conexion con Fabio
-	List<String> tags = Arrays.asList("urlprefix-/users");
+	List<String> tags = Arrays.asList("urlprefix-/todos");
 	public void init(@Observes @Initialized(ApplicationScoped.class) Object init) {
 
 		ConsulClient client = new ConsulClient(consulHost, consulPort);
