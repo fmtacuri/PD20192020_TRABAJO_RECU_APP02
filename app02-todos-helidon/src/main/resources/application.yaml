@@ -1,0 +1,11 @@
+server:
+    port: 8001
+javax:
+  sql:
+    DataSource:
+      todosDataSource:
+        dataSourceClassName: org.postgresql.jdbc3.Jdbc3PoolingDataSource
+        dataSource:
+          url: jdbc:postgresql://localhost:5432/distribuida
+          user: "postgres"
+          password: "12345"
